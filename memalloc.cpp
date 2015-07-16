@@ -26,7 +26,7 @@ void release() {
 ssize_t ptblcksize(ssize_t l) {
     if (l < BLOCK_SIZE)
         return BLOCK_SIZE;
-    return l + (l % BLOCK_SIZE);
+    return l + BLOCK_SIZE - (l % BLOCK_SIZE);
 }
 
 void *memalloc(ssize_t bytes) {
